@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Parte I</title>
+</head>
+
+<body>
+
+    <a href="#">home</a>&nbsp;&nbsp;
+    <a href="parte2.html">parte 2</a> &nbsp;&nbsp;
+    <a href="parte3.html">parte 3</a> &nbsp;&nbsp;
+    <a href="parte4.html">parte 4</a> &nbsp;&nbsp;
+    <a href="parte5.html">parte 5</a> &nbsp;&nbsp;
+    <a href="parte6.html">parte 6</a> &nbsp;&nbsp;
+    <a href="#">parte 7</a> &nbsp;&nbsp;
+    
+
+    <h2>Android com Banco de Dados – Parte I</h2>
+    <p>
+        Por padrão, o banco de dados utilizado é o SQLite, que atualmente se encontra na versão 3.31.1. A documentação
+        oficial está disponível no site do SQLite disponível em: <a href="https://www.sqlite.org/index.html"
+            target="_blank">SQLite 3 - Documentação Oficial</a>.
+    </p>
+    <p>
+        Uma breve explicação, o SQLite é uma biblioteca em linguagem C, open source, que implementa um banco de dados
+        SQL embutido, ou seja, não tem processo servidor separado, lendo e escrevendo diretamente no arquivo de banco de
+        dados no disco. O android utiliza o SQLite por ser uma biblioteca leve, utilizando dentre 250kb a 500kb, por ser
+        multi-plataforma, podemos copiar livremente um banco de dados entre sistemas de 32bits e 64bits.
+    </p>
+    <p>
+        O SQLite é nativo no sistema operacional android, ou seja, está disponível em todos os dispositivos que utilizam
+        o google android, sua utilização não requer qualquer configuração ou administração de banco de dados.
+    </p>
+    <p>
+        Para utilizá-lo precisamos criar uma classe que herde de SQLiteOpenHelper, implementar os métodos obrigatórios e
+        construtor da classe. Em seguida, definir os comandos SQL para criar e atualizar o banco.
+    </p>
+    <p>
+        O banco de dados é gerenciado automaticamente pela plataforma Android. Quando criado, o banco de dados por
+        padrão é armazenado no diretório <b>/data/data/&lt;nome-do-pacote-utilizado&gt;/databases/nome-do-arquivo.sqlite</b>.
+    </p>
+
+    <br>
+
+    <h3>1 DEFINIÇÃO DO APP COM BANCO DE DADOS</h3>
+    <p>
+        O aplicativo que defini para o aprendizado do uso de banco de dados em dispositivos móveis é uma agenda de
+        contatos. Nessa agenda de contatos vamos gravar nossos contatos com os atributos nome, celular, telefone
+        residencial e email. Note, que nem todos possuem telefone residencial, então esse é o único atributo não
+        obrigatório da nossa aplicação.
+    </p>
+    <p>
+        Na nossa agenda poderemos adicionar, editar e excluir contatos e, por fim, também adicionaremos um plus que é
+        discar para o contato a partir da nossa agenda.
+    </p>
+    <p>
+        Abaixo a modelagem da classe Contact que representa de forma abstrata um contato de nossa agenda.
+    </p>
+    <img src="imgs/classe_contact.PNG" alt="Classe contact" width="250px">
+
+    <br>
+
+    <h3>2 PROGRAMAÇÃO EM CAMADAS</h3>
+    <p>
+        Vamos utilizar um padrão de projetos que divide nossas funcionalidades em camadas, visando a organização,
+        manutenção e segurança dos nosso app. Para isso vamos criar as camadas descritas a seguir:
+    </p>
+
+    <ul>
+        <li><b>DAL:</b>Data Access Layer, ou seja, camada de acesso a dados, nesse pacote ficarão todos os arquivos de definição de
+            banco de dados e os arquivos de operações no banco de dados;
+        </li>
+        
+        <li><b>BLL:</b>Business and Logical Layer, ou seja, camada de lógica e negócios, camada que concentra as classes com a
+            inteligência e regras do app;
+        </li>
+        
+        <li><b>GUI:</b>Graphical User Interface, ou seja, interface gráfica com o usuário, camada que concentra as nossas activities
+            e todas as classes criadas para interação do usuário com o aplicativo;
+        </li>
+        
+        <li><b>LibClass:</b>Library Class, ou seja, biblioteca de classes, camada que concentra as classes que representam nossos
+            objetos do mundo real. Ex. Pessoa, Carro, etc;
+        </li>
+        
+        <li><b>Utilities:</b>camada de utilidades, concentra as classes de apoio ao nosso projeto;
+        </li>
+    </ul>
+</body>
+
+</html>

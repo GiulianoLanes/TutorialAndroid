@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Parte 3</title>
+</head>
+
+<body>
+    
+    <a href="index.html">home</a>&nbsp;&nbsp;
+    <a href="parte2.html">parte 2</a> &nbsp;&nbsp;
+    <a href="#">parte 3</a> &nbsp;&nbsp;
+    <a href="parte4.html">parte 4</a> &nbsp;&nbsp;
+    <a href="parte5.html">parte 5</a> &nbsp;&nbsp;
+    <a href="parte6.html">parte 6</a> &nbsp;&nbsp;
+    <a href="#">parte 7</a> &nbsp;&nbsp;
+
+    <h2>Android com Banco de Dados – Parte III</h2>
+    <br>
+
+    <h3>1 CRIAÇÃO DA CLASSE QUE É UMA ABSTRAÇÃO DE UM CONTATO</h3>
+    <p>Na área de trabalho do Android Studio, clicar com o botão direito do mouse sobre o pacote <b>LibClass</b>, em
+        seguida em posicionar o mouse sobre <b>New</b> e clicar na opção <b>Java Class (figura 1)</b>. Para todas as
+        demais criações de Classes vamos proceder dessa mesma maneira obedecendo o empacotamento adotado.</p>
+    <img src="imgs/fig01_parte03.PNG" alt="Criação de Classe no pacote LibClass" width="500px">
+    <br>
+
+    <p>Será exibida a janela <b>New Java Class</b>. Nessa janela preencer o nome da classe com o valor <b>Contact</b> e
+        manter todas as seleções conforme a <b>figura 2</b></p>
+    <img src="imgs/fig02_parte03.PNG" alt="Janela de Criação de Classes" width="350px">
+    <br>
+
+    <p>Após o clique em <b>OK</b>, na área de trabalho do Android Studio, será exibido o arquivo para ser editado
+        <b>figura 3</b>
+    </p>
+    <img src="imgs/fig03_parte03.PNG" alt="Classe Contact aguardando edição" width="500px">
+    <br>
+
+    <p>Agora podemos criar e encapsular nossos atributos, bem como, criar os métodos acessores <b>(gets)</b> e
+        modificadores <b>sets</b>. Abaixo o código da classe <b>Contact</b> com base na definição do aplicativo do
+        material Android com Banco de Dados - Parte I</p>
+    <img src="imgs/fig04_parte03.PNG" alt="Classe Contact com atributos e métodos" width="500px">
+    <br>
+    <img src="imgs/fig05_parte03.PNG" alt="Classe Contact com atributos e métodos" width="500px">
+    <br>
+    <h3>2 CRIAÇÃO DA CLASSE QUE DEFINE O BANCO DE DADOS DA APLICAÇÃO</h3>
+    <p>Na área de trabalho do Android Studio, clicar com o botão direito do mouse sobre o pacote <b>DAL</b>, em seguida,
+        posicionar o mouse sobre <b>New</b> e clicar na opção <b>Java Class (figura 4)</b>. Para todas as demais
+        criações de Classes vamos proceder dessa mesma maneira.</p>
+    <img src="imgs/fig06_parte03.PNG" alt="Criação de Classe no pacote DAL" width="500px">
+    <br>
+
+    <p>Será exibida a janela <b>New Java Class</b>. Nessa janela preencher o nome da classe com o valor <b>DataBank</b>
+        e manter todas as seleções conforme a <b>figura 5</b>.</p>
+    <img src="imgs/fig07_parte03.PNG" alt="Janela de Criação de Classes" width="350px">
+    <br>
+
+    <p>Após o clique em <b>OK</b>, na área de trabalho do ANdroid Studio será exibido o arquivo para ser editado
+        <b>(figura 6)</b>.
+    </p>
+    <img src="imgs/fig08_parte03.PNG" alt="Classe Databank aguardando edição" width="500px">
+    <br>
+
+    <p>A classe <b>DataBank</b> deve estender de <b>SQLiteOpenHelper</b>, ou seja, deve herdar todas as características
+        da Classe mãe.</p>
+    <img src="imgs/fig09_parte03.PNG" alt="Classe Databank" width="500px">
+    <br>
+
+    <p>Note que nossa classe apresenta erros, neste momento, esses erros, são exibidos por conta da falta dos métodos
+        que existem na Classe mãe. Para corrigir, utilizaremos a <b>Bug Light</b> do Androd Studio <b>(figura 7)</b>.
+    </p>
+    <img src="imgs/fig10_parte03.PNG" alt="Bug Light exibindo a correção a ser feita (implementar métodos)"
+        width="350px">
+    <br>
+
+    <p>Note que, mesmo com os métodos criados, a classe ainda persiste com erro. Abaixo o código da classe
+        <b>DataBank</b>.</p>
+    <img src="imgs/fig11_parte03.PNG" alt="Classe Databank" width="500px">
+    <br>
+
+    <p>Por conta do erro que persiste, para corrigir, utilizaremos a <b>Bug Light</b> do Android Studio novamente
+        <b>figura 8</b>.</p>
+    <img src="imgs/fig12_parte03.PNG" alt="Bug Light exibindo a correção a ser feita (criar método construtor"
+        width="350px">
+    <br>
+
+    <p>Agora a classe <b>Databank</b> está pronta para receber a codificação, conforme podemos observar abaixo.</p>
+    <img src="imgs/fig13_parte03.PNG" alt="Classe DataBank com métodos herdados prontos" width="500px">
+    <br>
+
+    <p>Mesmo estando pronta, existem pequenas alterações a serem realizadas, que devem ser feitas de acordo com o código
+        abaixo. Os comentários no código são para o entendimento das implementações</p>
+    <img src="imgs/fig14_parte03.PNG" alt="Classe DataBank com a condificação completa" width="500px">
+    <br>
+    <img src="imgs/fig15_parte03.PNG" alt="Classe Databank com a condificação completa" width="500px">
+    <br>
+    <img src="imgs/fig16_parte03.PNG" alt="Classe Databank com a condificação completa" width="500px">
+
+
+</body>
+
+</html>

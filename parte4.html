@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Parte 4</title>
+</head>
+
+<body>
+    
+    <a href="index.html">home</a>&nbsp;&nbsp;
+    <a href="parte2.html">parte 2</a> &nbsp;&nbsp;
+    <a href="parte3.html">parte 3</a> &nbsp;&nbsp;
+    <a href="#">parte 4</a> &nbsp;&nbsp;
+    <a href="parte5.html">parte 5</a> &nbsp;&nbsp;
+    <a href="parte6.html">parte 6</a> &nbsp;&nbsp;
+    <a href="#">parte 7</a> &nbsp;&nbsp;
+
+    <h2>Android com Banco de Dados – Parte IV</h2>
+    <br>
+
+    <h3>1 ACESSO AO BANCO ATRAVÉS DAS CAMADAS</h3>
+    <p>O banco de dados é um arquivo, conforme vimos no material Banco de Dados – Parte I, e para que nosso código fonte
+        implemente um mínimo de segurança e organização devemos obedecer a uma hierarquia de acesso. As requisições de
+        inserção, deleção ou update não devem ser realizadas diretamente nas activities, que são as Interfaces Gráficas
+        do nosso App, elas devem seguir um fluxo através do nosso empacotamento, saindo da GUI para a BLL e da BLL para
+        a DAL e vice-versa. A figura 1 ilustra esse fluxo entre as camadas.</p>
+    <img src="imgs/fig01_parte04.PNG" alt="Fluxo das requisições de banco entre as camadas" width="350px">
+    <br>
+
+    <p>Como podemos observar, GUI não tem ligação direta com a DAL, nem tão pouco a DAL tem ligação direta com a GUI,
+        mas essas restrições, são de responsabilidade do programador, por isso a importância dos padrões de projeto.
+        Para isso teremos de criar Classes que representam as regras de negócio, restrições e inteligência dos contatos
+        e Classes que representam as operações em nível de banco dos contatos. São elas:</p>
+    <ul>
+        <li><b>ContactBLL: </b>Regras e restrições de contato. Uma delas é não permitir que um contato que exista seja
+            inserido novamente.</li>
+        <li><b>ContactDAL: </b>Operações em nível de banco de contato. São elas: Insert, delete, update, select.</li>
+    </ul>
+    <br>
+
+    <h3>2 CRIAÇÃO DA CLASSE ContactDAL</h3>
+    <p>Como criar uma classe java já é sabido por nós, caso ainda reste dúvida, consulte o material Banco de Dados –
+        Parte III. Para criarmos a classe ContactDAL, como o nome já diz, essa classe deve ser guardada no pacote DAL.
+        Abaixo o código a ser implementado:</p>
+    <img src="imgs/fig02_parte04.PNG" alt="Classe ContactDAL com a condificação completa" width="500px">
+    <br>
+    <img src="imgs/fig03_parte04.PNG" alt="Classe ContactDAL com a condificação completa" width="500px">
+    <br>
+
+    <h3>3 CRIAÇÃO DA CLASSE ContactBLL</h3>
+    <p>Como criar uma classe java já é sabido por nós, caso ainda reste dúvida, consulte o material Banco de Dados –
+        Parte III. Para criarmos a classe ContactBLL, como o nome já diz, essa classe deve ser guardada no pacote BLL.
+        Abaixo o código a ser implementado:</p>
+    <img src="imgs/fig04_parte04.PNG" alt="Classe ContactBLL com a condificação completa" width="500px">
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Parte 5</title>
+</head>
+
+<body>
+    
+    <a href="index.html">home</a>&nbsp;&nbsp;
+    <a href="parte2.html">parte 2</a> &nbsp;&nbsp;
+    <a href="parte3.html">parte 3</a> &nbsp;&nbsp;
+    <a href="parte4.html">parte 4</a> &nbsp;&nbsp;
+    <a href="#">parte 5</a> &nbsp;&nbsp;
+    <a href="parte6.html">parte 6</a> &nbsp;&nbsp;
+    <a href="#">parte 7</a> &nbsp;&nbsp;
+
+    <h2>Android com Banco de Dados – Parte V</h2>
+    <br>
+
+    <h3>1 INTERFACE GRÁFICA (GUI)</h3>
+    <p>A agenda proposta seguirá o fluxo abaixo <b>(figura 1)</b>:</p>
+    <img src="imgs/fig01_parte05.PNG" alt="Graphical User Interface proposta" width="500px">
+    <br>
+
+    <ol>
+        <li>
+            <b>Splash Screen</b><br>
+            Utilizada como uma tela de propaganda ou para rodar processos em backgroud. Ela vai
+            permanecer ativa por 3 segundos e em seguida ira chamar a ListActivity.java.
+        </li>
+        <br>
+        <li>
+            <b>ListActivity</b><br>
+            Essa tela vai conter a ListView que exibirá a lista de todos os contatos em ordem alfabética. Também faremos
+            uso do FloatingActionButton da biblioteca Material Design do google, que ficará flutuando sobre a nossa
+            ListView, ao clicarmos nesse botão, o app abrirá a activity AddOrUpdateActivity para realizarmos a inclusão
+            de um novo contato a nossa agenda. <br>
+            Por fim, vamos adicionar um evento de clique em cada item (contato) que está nessa lista
+            (OnItemClickListener), para que possamos deletar, editar e até mesmo discar para o celular do contato
+            clicado. A clicar no contato será exibido AlertDialog que nos permitira executarmos as ações nele
+            implementadas.
+        </li>
+        <br>
+        <ol type="a">
+            <li>Opção de Deleção</li>
+            <li>Opção de Update</li>
+            <li>Opção de Discagem</li>
+        </ol>
+        <br>
+        <li>
+            <b>AddOrUpdateActivity</b><br>
+            Nessa Activity estará o formulário para adicionar um contato, bem como, para editar os dados de um contato,
+            controle esse realizado pelo programador.
+        </li>
+
+    </ol>
+    <br>
+    <h3>CODIGO FONTE DAS ACTIVITIES DA AGENDA</h3>
+    <ol>
+        <li>
+            <b>SplashActivity</b><br>
+            Utilizada como uma tela de propaganda. Ela vai permanecer ativa por 3 segundos e em seguida ira chamar a
+            ListActivity.java. <br>
+            <img src="imgs/fig02_parte05.PNG" alt="Layout xml da SplashActivity" width="500px">
+        </li>
+        <br>
+        <li>
+            <b>ListActivity</b><br>
+            Nesta activity temos a inserção de dois novos elementos, o primeiro, é o RelativeLayout qye nos permite o
+            uso do FloatActionButton sobre o elemento ListView que já é conhecido. <br>
+            Para inserir o <b>FloatingActionButton</b>, deve-se arrastar o elemento para a Activity e aceitar o download
+            da biblioteca do google que será inserido no arquivo de configuração do Gradle. Para isso, clique na paleta
+            e selecione a opção <b>Buttons</b> e localize o <b>FloatActionButton (figura 2)</b> e arraste-o sobre sua
+            <b>ListView</b>. <br>
+            <img src="imgs/fig03_parte05.PNG" alt="Paleta de componentes na aba Buttons" width="500px">
+            <br>
+            <br>
+            <img src="imgs/fig04_parte05.PNG" alt="Layout xml da ListActivity" width="500px">
+        </li>
+        <li>
+            <b>AddOrUpdateActivity</b><br>
+            Nesta activity teremos a inclusão de um novo controle chamado de TextInputLayout também da biblioteca
+            Material Design do google. <br>
+            Para inserir o <b>TextInputLayout</b>, deve-se arrastar o elemento para a Activity e aceitar o download da
+            biblioteca do google que será inserido no arquivo de configuração do Gradle (caso já tenha sido importado
+            não será solicitado). Para isso, clique na paleta e selecione a opção <b>Text</b> e localize
+            <b>TextInputLayout (figura 2)</b> e arraste-o para sua activity. <br>
+            <img src="imgs/fig05_parte05.PNG" alt="Paleta de componentes na aba Text" width="500px">
+            <br>
+            <br>
+            <img src="imgs/fig06_parte05.PNG" alt="Layout xml da AddOrUpdateActivity" width="500px">
+            <br>
+            <br>
+            <img src="imgs/fig07_parte05.PNG" alt="Layout xml da AddOrUpdateActivity" width="500px">
+        </li>
+
+    </ol>
+</body>
+
+</html>
